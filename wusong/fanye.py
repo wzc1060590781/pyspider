@@ -7,12 +7,10 @@ from selenium import webdriver
 
 
 class FanYe():
-    def __init__(self,anyou):
-        self.content_url ="https://www.itslaw.com/search?searchMode=judgements&sortType=1&conditions=searchWord+"+anyou+"+1+"+anyou
+    def __init__(self, anyou):
+        self.content_url = "https://www.itslaw.com/search?searchMode=judgements&sortType=1&conditions=searchWord+" + anyou + "+1+" + anyou
         self.login_url = "https://www.itslaw.com/api/v1/users/user/login/encryption"
         self.sess = requests.session()
-
-
 
     def index(self):
         """
@@ -31,12 +29,11 @@ class FanYe():
         resp = self.sess.get(url)
 
     def login(self):
-
         data = {
-                "isAutoLogin": "true",
-                "password": "MjQyMjQyNDU1NA==",
-                "userName": "13836841546"
-            }
+            "isAutoLogin": "true",
+            "password": "MjQyMjQyNDU1NA==",
+            "userName": "13836841546"
+        }
         data = json.dumps(data)
         headers = {
             "Host": "www.lawsdata.com",
@@ -71,10 +68,14 @@ class FanYe():
         pass
 
 
+class aaaa():
+    pass
+
+
 if __name__ == '__main__':
     fanye = FanYe("生产、销售伪劣产品罪")
     fanye.index()
     fanye.get_sess_cookie()
     fanye.login()
     # print(unquote(
-        # "https://www.itslaw.com/search?searchMode=judgements&sortType=1&conditions=searchWord%2B%E7%94%9F%E4%BA%A7%E3%80%81%E9%94%80%E5%94%AE%E4%BC%AA%E5%8A%A3%E4%BA%A7%E5%93%81%E7%BD%AA%2B1%2B%E7%94%9F%E4%BA%A7%E3%80%81%E9%94%80%E5%94%AE%E4%BC%AA%E5%8A%A3%E4%BA%A7%E5%93%81%E7%BD%AA"))
+    # "https://www.itslaw.com/search?searchMode=judgements&sortType=1&conditions=searchWord%2B%E7%94%9F%E4%BA%A7%E3%80%81%E9%94%80%E5%94%AE%E4%BC%AA%E5%8A%A3%E4%BA%A7%E5%93%81%E7%BD%AA%2B1%2B%E7%94%9F%E4%BA%A7%E3%80%81%E9%94%80%E5%94%AE%E4%BC%AA%E5%8A%A3%E4%BA%A7%E5%93%81%E7%BD%AA"))
